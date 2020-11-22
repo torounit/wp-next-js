@@ -5,11 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "wp-env": "wp-env start"
   },
   "dependencies": {
+    "@hamworks/wordpress-api-fetch": "^0.1.0",
+    "@wordpress/api-fetch": "^3.20.0",
+    "@wordpress/env": "^2.1.0",
     "next": "10.0.2",
+    "next-pwa": "^3.1.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "swr": "^0.3.9",
+    "wpapi": "^1.2.1"
   }
 }

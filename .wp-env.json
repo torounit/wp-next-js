@@ -1,0 +1,17 @@
+{
+  "core": "https://wordpress.org/wordpress-5.6-RC1.zip",
+  "plugins": [
+  ],
+  "mappings": {
+    "wp-content/mu-plugins": "./mu-plugins"
+  },
+  "config": {
+    "WP_ENVIRONMENT_TYPE": "local"
+  },
+  "port": 12345,
+  "env": {
+    "tests": {
+      "port": 23456
+    }
+  }
+}
