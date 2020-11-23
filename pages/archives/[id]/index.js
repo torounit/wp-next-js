@@ -1,5 +1,5 @@
-import { fetcher } from '../../lib/apiFetch';
-import Article from '../../components/Article';
+import { fetcher } from '../../../lib/apiFetch';
+import Article from '../../../components/Article';
 
 function Post( { post } ) {
 

@@ -15,9 +15,14 @@ add_action( 'template_redirect', function () {
   global $wp_query;
   if ( $wp_query->is_preview ) {
     if ( get_queried_object()->post_type === 'page' ) {
-      wp_redirect( 'http://localhost:3000/page/preview/' . get_queried_object_id() );
+      if ( get_queried_object()->post_name ) {
+        wp_redirect( 'http://localhost:3000/' . get_queried_object()->post_name.   '/preview' );
+      }
+      else{
+        wp_redirect( 'http://localhost:3000/preview/preview?id='. get_queried_object_id() );
+      }
     } else {
-      wp_redirect( 'http://localhost:3000/archives/preview/' . get_queried_object_id() );
+      wp_redirect( 'http://localhost:3000/archives/' . get_queried_object_id() . '/preview' );
     }
   }
 } );
