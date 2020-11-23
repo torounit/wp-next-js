@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function Home( { posts: initialData } ) {
-  const { data: posts, error } = useSWR( '/wp/v2/posts?per_page=-1&context=edit', fetcher, { initialData } );
+  const { data: posts, error } = useSWR( '/wp/v2/posts?per_page=-1', fetcher, { initialData } );
   if ( error ) return <div>failed to load</div>;
 
   const user = useSWR( '/wp/v2/users/me', fetcher );

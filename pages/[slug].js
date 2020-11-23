@@ -1,16 +1,8 @@
-import { fetcher } from '../../lib/apiFetch';
-function Page( { post } ) {
+import { fetcher } from '../lib/apiFetch';
+import Article from '../components/Article';
 
-  return (
-    <article>
-      <h1>{ post?.title.rendered }</h1>
-      <div
-        dangerouslySetInnerHTML={
-          { __html: post?.content.rendered }
-        }
-      />
-    </article>
-  );
+function Page( { post } ) {
+  return <Article post={ post } />;
 }
 
 export default Page;
@@ -21,7 +13,7 @@ export const getStaticPaths = async () => {
     paths: posts.map( ( { id, slug } ) => ( {
       params: {
         id: id + '',
-        slug: decodeURI(slug)
+        slug: decodeURI( slug )
       }
     } ) ),
     fallback: process.env.NODE_ENV !== 'production' ? 'blocking' : false
@@ -36,11 +28,11 @@ export const getStaticProps = async ( { params } ) => {
       }
     };
   }
-  const slug = typeof params.slug === 'string' ? params.slug : params.slug[0]
-  const pages = await fetcher( `/wp/v2/pages/?slug=${ slug }`);
+  const slug = typeof params.slug === 'string' ? params.slug : params.slug[ 0 ];
+  const pages = await fetcher( `/wp/v2/pages/?slug=${ slug }` );
   return {
     props: {
-      post: pages[0]
+      post: pages[ 0 ]
     }
   };
 };
