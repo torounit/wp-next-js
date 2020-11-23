@@ -2,6 +2,7 @@ import { fetcher } from '../../../lib/apiFetch';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Post from './index';
+import { fetchPreview } from '../../../lib/fetchers';
 
 function Preview() {
   const [ post, setPost ] = useState();
@@ -13,21 +14,8 @@ function Preview() {
     }
   }, [ router ] );
 
-  const fetchPreviewPost = async ( postId ) => {
-    if ( postId ) {
-      const revisions = await fetcher( `/wp/v2/posts/${ postId }/revisions` );
-      if ( revisions && revisions.length > 0 ) {
-        setPost( revisions[0] );
-      }
-      else {
-        const preview = await fetcher( `/wp/v2/posts/${ postId }` );
-        setPost(preview);
-      }
-    }
-  }
-
   useEffect( () => {
-    fetchPreviewPost( id );
+    fetchPreview( { id, postTypeSlug: 'posts' } ).then( ( post ) => setPost( post ) );
   }, [ id ] );
 
   return <Post post={ post } />;
