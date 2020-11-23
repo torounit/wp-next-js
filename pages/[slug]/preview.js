@@ -1,7 +1,7 @@
 import { fetcher } from '../../lib/apiFetch';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import Article from '../../components/Article';
+import Page from './index';
 
 function Preview() {
   const [ post, setPost ] = useState();
@@ -49,7 +49,7 @@ function Preview() {
     }
   }, [ slug, id, post ] );
 
-  return <Article post={ post } />;
+  return <Page post={ post } />;
 }
 
 export default Preview;
