@@ -8,6 +8,13 @@ export default function Home( { posts } ) {
       <Head>
         <title>Create Next App</title>
       </Head>
+
+      <ul>
+        <li><Link href="/hoge">hoge</Link></li>
+        <li><Link href="/hoge/hoge.html">hoge/hoge</Link></li>
+        <li><Link href="/about.html">about</Link></li>
+      </ul>
+
       <ul>
         { posts.map( ( { id, title } ) => (
           <li key={ id }>
