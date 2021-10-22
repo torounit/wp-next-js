@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@hamworks/wordpress-api-fetch": "^0.1.0",
-    "@wordpress/api-fetch": "^3.20.0",
-    "@wordpress/env": "^2.1.0",
-    "next": "10.0.2",
-    "next-pwa": "^3.1.5",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "swr": "^0.3.9",
-    "wpapi": "^1.2.1"
+    "@wordpress/api-fetch": "^5.2.3",
+    "@wordpress/env": "^4.1.2",
+    "cross-fetch": "^3.1.4",
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "^1.0.1",
+    "wpapi": "^1.2.2"
   }
 }
