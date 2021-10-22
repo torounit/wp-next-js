@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
         slug: decodeURI( slug )
       }
     } ) ),
-    fallback: process.env.NODE_ENV !== 'production' ? 'blocking' : false
+    fallback: false
   };
 };
 
